@@ -30,10 +30,10 @@
             <a href="#" target="_blank">Veja meu portfólio</a>
           </li>
           <li>
-            <a href="#" target="_blank">Veja meu E-book</a>
+            <a href="#" onclick="openPopup()">Galeria de conquistas</a>
           </li>
           <li>
-            <a href="#" target="_blank">Estude comigo</a>
+            <a href="#" target="_blank">Sobre mim</a>
           </li>
           <li>
             <a href="https://rocketseat.com.br/explorer" target="_blank"
@@ -66,6 +66,21 @@
         Feito com amor na <a href="https://rocketseat.com.br"> Rocketseat</a>
       </footer>
     </div>
+    <div id="popUP" class="popUP">
+      <h1>Galeria</h1>
+      <div class="image-container">
+        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
+        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
+        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
+        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
+        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
+        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
+      </div>
+      <div class="popUPimg">
+        <span>&times;</span>
+        <img src="./assets/Guts.jpeg" alt="" />
+      </div>
+    </div>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -74,6 +89,18 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script>
+      document.querySelectorAll(".image-container img").forEach((image) => {
+        image.onclick = () => {
+          document.querySelector(".popUPimg").style.display = "block"
+          document.querySelector(".popUPimg img").src =
+            image.getAttribute("src")
+        }
+      })
+      document.querySelector(".popUPimg span").onclick = () => {
+        document.querySelector(".popUPimg").style.display = "none"
+      }
+    </script>
     <script src="./script.js"></script>
   </body>
 </html>
