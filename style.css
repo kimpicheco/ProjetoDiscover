@@ -61,7 +61,7 @@ body * {
   gap: 8px;
 }
 .light #switch button {
-  transform: translateX(32px) translateY(-50%);
+  transform: translateX(100%) translateY(-50%);
 }
 #switch button:hover {
   outline: 8px solid var(--surface-color-hover);
