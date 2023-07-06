@@ -225,7 +225,7 @@ footer {
   padding: 24px;
 }
 /* media queries */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .popUP .popUPimg img {
     width: 95%;
   }
