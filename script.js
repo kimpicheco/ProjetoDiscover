@@ -10,3 +10,10 @@ function toggleMode() {
     img.setAttribute("alt", "Foto de perfil do Kim.")
   }
 }
+let popup = document.getElementById("popUP")
+function openPopup() {
+  popup.classList.add("open-popup")
+}
+function closePopup() {
+  popup.classList.remove("open-popup")
+}

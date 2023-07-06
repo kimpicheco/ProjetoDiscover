@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
+    <span class="xpams">&times;</span>
     <div id="container">
       <div id="profile">
         <img src="./assets/avatar.png" alt="Foto de perfil" />
@@ -67,18 +68,26 @@
       </footer>
     </div>
     <div id="popUP" class="popUP">
+      <span class="xomps" onclick="closePopup()">&times;</span>
       <h1>Galeria</h1>
       <div class="image-container">
-        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
-        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
-        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
-        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
-        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
-        <div class="imageG"><img src="./assets/Guts.jpeg" alt="" /></div>
+        <div class="imageG"><img src="./assets/Guts.jpeg" title="foto1" /></div>
+        <div class="imageG">
+          <img src="./assets/avatar-light.png" title="foto2" />
+        </div>
+        <div class="imageG">
+          <img src="./assets/avatar.png" title="foto3" />
+        </div>
+        <div class="imageG"><img src="./assets/Guts.jpeg" title="foto4" /></div>
+        <div class="imageG">
+          <img src="./assets/avatar-light.png" title="foto5" />
+        </div>
+        <div class="imageG">
+          <img src="./assets/avatar.png" title="foto6" />
+        </div>
       </div>
       <div class="popUPimg">
-        <span>&times;</span>
-        <img src="./assets/Guts.jpeg" alt="" />
+        <img src="" title="" />
       </div>
     </div>
     <script
@@ -93,12 +102,14 @@
       document.querySelectorAll(".image-container img").forEach((image) => {
         image.onclick = () => {
           document.querySelector(".popUPimg").style.display = "block"
+          document.querySelector(".xpams").style.display = "block"
           document.querySelector(".popUPimg img").src =
             image.getAttribute("src")
         }
       })
-      document.querySelector(".popUPimg span").onclick = () => {
+      document.querySelector(".xpams").onclick = () => {
         document.querySelector(".popUPimg").style.display = "none"
+        document.querySelector(".xpams").style.display = "none"
       }
     </script>
     <script src="./script.js"></script>
