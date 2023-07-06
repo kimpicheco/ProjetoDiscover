@@ -143,6 +143,7 @@ ul li a:hover {
   visibility: hidden;
   transition: transform 0.4s;
   border-radius: 8px;
+  border: 1px solid var(--stroke-color);
 }
 .open-popup {
   visibility: visible;
@@ -179,12 +180,13 @@ ul li a:hover {
 }
 .popUP .popUPimg {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   height: 100%;
-  width: 100%;
+  width: 130%;
   z-index: 100;
   display: none;
+  transform: translate(-50%, -50%);
 }
 .xpams {
   position: absolute;
@@ -227,7 +229,7 @@ footer {
 /* media queries */
 @media (max-width: 1000px) {
   .popUP .popUPimg img {
-    width: 95%;
+    width: 130%;
   }
 }
 @media (min-width: 700px) {
