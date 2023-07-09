@@ -41,3 +41,4 @@ document.querySelector(".xpams").onclick = () => {
   document.querySelector(".xpams").style.display = "none"
   document.querySelector(".popup-bgfade").style.display = "none"
 }
+console
