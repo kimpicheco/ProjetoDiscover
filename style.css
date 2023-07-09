@@ -285,7 +285,7 @@ footer {
 /* media queries */
 @media (max-width: 1000px) {
   .popUP .popUPimg img {
-    width: 130%;
+    width: 120%;
   }
   .aboutMe {
     min-width: 75%;
