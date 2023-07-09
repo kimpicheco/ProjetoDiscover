@@ -276,7 +276,9 @@ ul li a:hover {
   object-fit: cover;
   z-index: 1001;
 }
-
+li {
+  cursor: pointer;
+}
 footer {
   font-size: 14px;
   text-align: center;
