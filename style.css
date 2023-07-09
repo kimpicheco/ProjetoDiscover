@@ -6,6 +6,7 @@
   --surface-color-hover: rgba(255, 255, 255, 0.2);
   --switch-bg: url(./assets/MoonStars.svg);
   --profile-img: url(./assets/avatar.png);
+  --popup-bg: rgba(54, 57, 62, 1);
 }
 .light {
   --text-color: black;
@@ -14,6 +15,7 @@
   --surface-color: rgba(0, 0, 0, 0.1);
   --surface-color-hover: rgba(0, 0, 0, 0.2);
   --switch-bg: url(./assets/Sun.svg);
+  --popup-bg: rgba(255, 255, 255, 1);
 }
 * {
   margin: 0px;
@@ -25,8 +27,12 @@ body {
   background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
 }
+@font-face {
+  font-family: AvantGarde;
+  src: url(./assets/AVGARDN_2.TTF);
+}
 body * {
-  font-family: "Inter", sans-serif;
+  font-family: AvantGarde;
   color: var(--text-color);
 }
 #container {
@@ -130,15 +136,64 @@ ul li a:hover {
 #socials a:hover {
   background: var(--surface-color-hover);
 }
+.popup-bgfade {
+  top: 0;
+  z-index: 800;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+.aboutMe {
+  position: absolute;
+  background-color: var(--popup-bg);
+  border-radius: 8px;
+  padding: 0px 24px 24px;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  min-height: fit-content;
+  padding: 24px;
+  border: 1px solid var(--stroke-color);
+  transform: translate(-50%, -50%) scale(0.1);
+  transition: transform 0.4s;
+  text-align: center;
+  visibility: hidden;
+}
+.aboutMe h2 {
+  font-size: 24;
+  padding: 19px;
+  color: var(--text-color);
+}
+.aboutMe p {
+  padding: 16px;
+}
+.aboutMe span {
+  position: absolute;
+  top: 0px;
+  right: 12px;
+  font-size: 25px;
+  font-weight: bolder;
+  color: #bbb;
+  z-index: 99;
+  cursor: pointer;
+  text-shadow: 0px 0px #fff;
+}
+.open-aboutMe {
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .popUP {
   min-height: fit-content;
-  background: #ddd;
+  background-color: var(--popup-bg);
   position: absolute;
   padding: 24px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.1);
-  z-index: 99;
+  z-index: 1000;
   padding: 0px 24px 24px;
   visibility: hidden;
   transition: transform 0.4s;
@@ -152,7 +207,7 @@ ul li a:hover {
 .popUP h1 {
   font-size: 24;
   padding: 19px;
-  color: #333;
+  color: var(--text-color);
   text-align: center;
 }
 .popUP .image-container {
@@ -163,10 +218,9 @@ ul li a:hover {
   padding: 12px;
 }
 .popUP .image-container .imageG {
-  width: 100px;
-  height: 100px;
+  height: 50px;
   overflow: hidden;
-  outline: 3px solid white;
+  outline: 3px solid var(--stroke-color);
 }
 .popUP .image-container .imageG img {
   height: 100%;
@@ -184,18 +238,18 @@ ul li a:hover {
   left: 50%;
   height: 100%;
   width: 130%;
-  z-index: 100;
+  z-index: 1000;
   display: none;
   transform: translate(-50%, -50%);
 }
 .xpams {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 10px;
+  right: 12px;
   font-size: 40px;
   font-weight: bolder;
   color: #bbb;
-  z-index: 1000;
+  z-index: 1001;
   cursor: pointer;
   display: none;
   text-shadow: 0px 0px #fff;
@@ -206,9 +260,10 @@ ul li a:hover {
   right: 12px;
   font-size: 25px;
   font-weight: bolder;
-  color: #555;
+  color: #bbb;
   z-index: 99;
   cursor: pointer;
+  text-shadow: 0px 0px #fff;
 }
 .popUP .popUPimg img {
   position: absolute;
@@ -219,6 +274,7 @@ ul li a:hover {
   border-radius: 8px;
   width: 750px;
   object-fit: cover;
+  z-index: 1001;
 }
 
 footer {
@@ -230,6 +286,9 @@ footer {
 @media (max-width: 1000px) {
   .popUP .popUPimg img {
     width: 130%;
+  }
+  .aboutMe {
+    min-width: 75%;
   }
 }
 @media (min-width: 700px) {
